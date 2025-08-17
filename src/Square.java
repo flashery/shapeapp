@@ -1,18 +1,13 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
- *
+ * Square shape class
  * @author flashery
  */
 import java.awt.*;
 
 public class Square extends Shape {
 
-    static int size;
-    int area;
+    protected int size;
+    protected int area;
 
     public Square() {
         super();

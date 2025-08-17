@@ -1,25 +1,20 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
- *
+ * Rectangle shape class
  * @author flashery
  */
 import java.awt.*;
 
 public class Rectangle extends Shape {
 
-    static int lenght, width;
-    static int area;
+    protected int length, width;
+    protected int area;
     
     public Rectangle() {
         super();
     }
 
     public void setH(int value) {
-        lenght = value;
+        length = value;
     }
 
     public void setW(int value) {
@@ -27,7 +22,7 @@ public class Rectangle extends Shape {
     }
 
     public int getH() {
-        return lenght;
+        return length;
     }
 
     public int getW() {
@@ -35,7 +30,7 @@ public class Rectangle extends Shape {
     }
 
     public void computeArea() {
-        area = lenght * width;
+        area = length * width;
     }
 
     public int getArea() {
