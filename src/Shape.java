@@ -1,10 +1,5 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
- *
+ * Base Shape class - Parent class for all shapes
  * @author flashery
  */
 
@@ -12,12 +7,12 @@
 
 import java.awt.*;
 
-public class Shape{
+public class Shape {
     
-   static String name;
-   static Color fillColor;
-   static Color lineColor;
-   static int xLoc, yLoc;
+    protected String name;
+    protected Color fillColor;
+    protected Color lineColor;
+    protected int xLoc, yLoc;
    
     public void setName(String value){
         name = value;

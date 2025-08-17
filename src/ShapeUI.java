@@ -1,17 +1,19 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
- *
+ * Shape Application - Main UI class
  * @author flashery
  */
 //This is now the main class of our program
 import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
-public class ShapeUI extends JFrame implements WindowListener {
+public class ShapeUI extends JFrame {
+
+    // Constants for UI dimensions and colors
+    private static final int WINDOW_WIDTH = 900;
+    private static final int WINDOW_HEIGHT = 700;
+    private static final int TITLE_HEIGHT = 50;
+    private static final Color TITLE_BACKGROUND_COLOR = new Color(242, 233, 45);
+    private static final int FONT_SIZE = 20;
 
     //instantiate the class
     
@@ -27,7 +29,7 @@ public class ShapeUI extends JFrame implements WindowListener {
     JPanel title = new JPanel();
     JLabel titleLabel = new JLabel("Shape Application", JLabel.CENTER);
     
-    Font f = new Font("SansSerif", Font.BOLD, 20);
+    Font f = new Font("SansSerif", Font.BOLD, FONT_SIZE);
     
     //Contructor
     
@@ -43,11 +45,11 @@ public class ShapeUI extends JFrame implements WindowListener {
   
         this.setVisible(true);
         this.setResizable(false);
-        this.setSize(900, 700);
+        this.setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
      
         title.setVisible(true);
-        title.setBounds(0, 0, 900, 50);
-        title.setBackground(new Color(242, 233, 45));
+        title.setBounds(0, 0, WINDOW_WIDTH, TITLE_HEIGHT);
+        title.setBackground(TITLE_BACKGROUND_COLOR);
         
         titleLabel.setFont(f);
         titleLabel.setForeground(Color.red);
@@ -70,9 +72,12 @@ public class ShapeUI extends JFrame implements WindowListener {
     }
     
     private void addListener() {
-
-        this.addWindowListener(this);
-
+        addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                System.exit(0);
+            }
+        });
     }
     
     
@@ -85,40 +90,5 @@ public class ShapeUI extends JFrame implements WindowListener {
 
         ShapeUI su = new ShapeUI();
 
-    }
-
-
-   
-    
-    //Overriding Methods
-    @Override
-    public void windowClosing(WindowEvent ae) {
-        System.exit(0);
-    }
-
-    @Override
-    public void windowOpened(WindowEvent ae) {
-        
-    }
-
-    @Override
-    public void windowClosed(WindowEvent ae) {
-    }
-
-    @Override
-    public void windowDeiconified(WindowEvent ae) {
-    }
-
-    @Override
-    public void windowIconified(WindowEvent ae) {
-    }
-
-    @Override
-    public void windowDeactivated(WindowEvent ae) {
-    }
-
-    @Override
-    public void windowActivated(WindowEvent ae) {
-       
     }
 }

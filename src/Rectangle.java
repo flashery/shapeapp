@@ -1,18 +1,13 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
- *
+ * Rectangle shape class
  * @author flashery
  */
 import java.awt.*;
 
 public class Rectangle extends Shape {
 
-    static int length, width;
-    static int area;
+    protected int length, width;
+    protected int area;
     
     public Rectangle() {
         super();
