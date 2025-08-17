@@ -31,7 +31,7 @@ public class ShapeMenu extends JPanel implements ActionListener, ChangeListener,
     Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
     //instantiate class components
     String[] strShape = {"Square", "Rectangle"};//initialize value to be put on the ComboBox
-    JComboBox cmbShape = new JComboBox(strShape);
+    JComboBox<String> cmbShape = new JComboBox<>(strShape);
     JSpinner xLocSpinner;
     JSpinner yLocSpinner;
     JSpinner sizeSpinner;

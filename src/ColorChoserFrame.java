@@ -27,7 +27,7 @@ public class ColorChoserFrame extends JFrame implements ActionListener, ChangeLi
     //Instantiate JColorChoser class
     String changeColorOf [] = {"Fill Color", "Border Color"};
     
-    JComboBox cmbChangeColorOf = new JComboBox(changeColorOf);
+    JComboBox<String> cmbChangeColorOf = new JComboBox<>(changeColorOf);
     
     JColorChooser jcc = new JColorChooser();
     
