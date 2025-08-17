@@ -1,10 +1,5 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
- *
+ * Shape menu panel for shape selection and manipulation
  * @author flashery
  */
 import java.awt.*;
@@ -14,6 +9,10 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
 public class ShapeMenu extends JPanel implements ActionListener, ChangeListener, MouseMotionListener, MouseListener {
+
+    // Constants for shape types
+    private static final String SQUARE = "Square";
+    private static final String RECTANGLE = "Rectangle";
 
     //instantiate class
     ColorChoserFrame ccf = new ColorChoserFrame();
@@ -30,7 +29,7 @@ public class ShapeMenu extends JPanel implements ActionListener, ChangeListener,
     //Gettting the size of the screen
     Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
     //instantiate class components
-    String[] strShape = {"Square", "Rectangle"};//initialize value to be put on the ComboBox
+    String[] strShape = {SQUARE, RECTANGLE};//initialize value to be put on the ComboBox
     JComboBox<String> cmbShape = new JComboBox<>(strShape);
     JSpinner xLocSpinner;
     JSpinner yLocSpinner;
@@ -237,14 +236,14 @@ public class ShapeMenu extends JPanel implements ActionListener, ChangeListener,
         shape.setX(((Integer) xLocSpinner.getValue()).intValue());
         shape.setY(((Integer) yLocSpinner.getValue()).intValue());
 
-        if (cmbShape.getSelectedItem().toString().equals("Rectangle")) {
+        if (RECTANGLE.equals(cmbShape.getSelectedItem().toString())) {
 
             rect.setW(((Integer) xLocSpinner.getValue()).intValue());
             rect.setH(((Integer) yLocSpinner.getValue()).intValue());
 
 
 
-        } else if (cmbShape.getSelectedItem().toString().equals("Square")) {
+        } else if (SQUARE.equals(cmbShape.getSelectedItem().toString())) {
 
             sq.setS(((Integer) xLocSpinner.getValue()).intValue());
 

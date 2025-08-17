@@ -5,17 +5,16 @@ import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
- *
+ * Color chooser frame for shape color selection
  * @author flashery
  */
 
 public class ColorChoserFrame extends JFrame implements ActionListener, ChangeListener{
+
+    // Constants for color options
+    private static final String FILL_COLOR = "Fill Color";
+    private static final String BORDER_COLOR = "Border Color";
 
     //Instantiate a class
     
@@ -25,7 +24,7 @@ public class ColorChoserFrame extends JFrame implements ActionListener, ChangeLi
     Rectangle rect = new Rectangle();
     
     //Instantiate JColorChoser class
-    String changeColorOf [] = {"Fill Color", "Border Color"};
+    String changeColorOf [] = {FILL_COLOR, BORDER_COLOR};
     
     JComboBox<String> cmbChangeColorOf = new JComboBox<>(changeColorOf);
     
@@ -114,12 +113,12 @@ public class ColorChoserFrame extends JFrame implements ActionListener, ChangeLi
     @Override
     public void stateChanged(ChangeEvent e) {
         
-            if(cmbChangeColorOf.getSelectedItem() == "Fill Color"){
+            if(FILL_COLOR.equals(cmbChangeColorOf.getSelectedItem())){
                 
                 shape.setFillColor(jcc.getColor());
                 panelFillColor.setBackground(shape.getFillColor());
                 
-            }else if(cmbChangeColorOf.getSelectedItem() == "Border Color"){
+            }else if(BORDER_COLOR.equals(cmbChangeColorOf.getSelectedItem())){
                 
                 shape.setLineColor(jcc.getColor());
                 panelLineColor.setBackground(shape.getLineColor());
